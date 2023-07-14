@@ -1,8 +1,8 @@
-server:
-  port: ${PORT:8000}
 spring:
   application:
-    name: user-api
+    name: payroll-api
+server:
+  port: ${PORT:8100}
 eureka:
   client:
     serviceUrl:
