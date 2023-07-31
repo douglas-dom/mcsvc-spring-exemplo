@@ -29,9 +29,7 @@ services:
   user-api:
     image: douglasexe/user-api:1.0.0
     ports:
-     - "8000:8000"
-    expose:
-       - "8000"
+     - "8000"
     depends_on:
        - eureka-server
        - api-gateway
@@ -39,6 +37,9 @@ services:
       - EUREKA_URL=http://eureka-server:8761/eureka
     networks:
       - hr-system
+    deploy:
+      replicas: 3
+
 
   payroll-api:
     image: douglasexe/payroll-api:1.0.0
